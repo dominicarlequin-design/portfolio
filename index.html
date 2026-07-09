@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dominic Arlequin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --forest: #2F3E33;
+    --sage: #6B8068;
+    --sage-light: #A9B8A4;
+    --body-text: #2A2A28;
+    --muted: #6E6E68;
+    --space: 8px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--body-text);
+    font-family: "DM Sans", sans-serif;
+    padding: calc(var(--space) * 6) calc(var(--space) * 2);
+  }
+
+  h1, h2, .serif {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .frame {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid var(--forest);
+  }
+
+  .section {
+    border-bottom: 1px solid var(--forest);
+    padding: calc(var(--space) * 6) calc(var(--space) * 4);
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .label {
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--sage);
+    margin: 0 0 calc(var(--space) * 3) 0;
+    text-align: center;
+  }
+
+  .hero {
+    text-align: center;
+  }
+
+  .mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto calc(var(--space) * 4) auto;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--forest);
+  }
+
+  .hero h1 {
+    font-size: 56px;
+    margin: 0 0 calc(var(--space) * 2) 0;
+    color: var(--forest);
+  }
+
+  .tagline {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .two-col {
+    border: 1px solid var(--forest);
+    display: flex;
+  }
+
+  .two-col > div {
+    flex: 1;
+    padding: calc(var(--space) * 4) calc(var(--space) * 2);
+    text-align: center;
+    font-size: 22px;
+    color: var(--forest);
+  }
+
+  .two-col > div:first-child {
+    border-right: 1px solid var(--forest);
+  }
+
+  .three-col {
+    display: flex;
+    gap: 0;
+  }
+
+  .three-col > div {
+    flex: 1;
+    border: 1px solid var(--forest);
+    padding: calc(var(--space) * 4) calc(var(--space) * 2);
+    text-align: center;
+    font-size: 22px;
+    color: var(--forest);
+  }
+
+  .three-col > div + div {
+    border-left: none;
+  }
+
+  .project-block {
+    border: 1px solid var(--forest);
+  }
+
+  .project-row {
+    padding: calc(var(--space) * 4);
+    border-bottom: 1px solid var(--forest);
+  }
+
+  .project-row:last-child {
+    border-bottom: none;
+  }
+
+  .project-row h3 {
+    font-size: 26px;
+    margin: 0 0 calc(var(--space) * 1.5) 0;
+    color: var(--forest);
+  }
+
+  .project-row p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: calc(var(--space) * 5);
+    flex-wrap: wrap;
+  }
+
+  .contact-links a {
+    color: var(--body-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 2px;
+    font-size: 15px;
+  }
+
+  .contact-links a:hover {
+    color: var(--sage);
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--sage);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding: calc(var(--space) * 3) var(--space);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .two-col {
+      flex-direction: column;
+    }
+
+    .two-col > div:first-child {
+      border-right: none;
+      border-bottom: 1px solid var(--forest);
+    }
+
+    .three-col {
+      flex-direction: column;
+    }
+
+    .three-col > div {
+      border: 1px solid var(--forest);
+    }
+
+    .three-col > div + div {
+      border-left: 1px solid var(--forest);
+      border-top: none;
+    }
+
+    .contact-links {
+      gap: calc(var(--space) * 3);
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <section class="section hero">
+    <div class="mark">DA</div>
+    <h1>Dominic Arlequin</h1>
+    <p class="tagline">I design with intention. I build with purpose.</p>
+  </section>
+
+  <section class="section">
+    <p class="label">Background</p>
+    <div class="two-col">
+      <div class="serif">Interior Design</div>
+      <div class="serif">Pursuit Fellowship</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="label">What I Bring</p>
+    <div class="three-col">
+      <div class="serif">Purpose</div>
+      <div class="serif">Design Sense</div>
+      <div class="serif">Self Direction</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="label">Projects</p>
+    <div class="project-block">
+      <div class="project-row">
+        <h3>Flashcards v2</h3>
+        <p>Upload a PDF, get spaced-repetition flashcards — with a gamified level map that unlocks as you learn. Built with the Anthropic API.</p>
+      </div>
+      <div class="project-row">
+        <h3>Mood Palette</h3>
+        <p>AI-generated brand palettes, or extract one straight from a photo — with built-in accessibility contrast scoring.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <p class="label">Contact — Email — Social</p>
+    <div class="contact-links">
+      <a href="mailto:hello@dominicarlequin.com">Email</a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
