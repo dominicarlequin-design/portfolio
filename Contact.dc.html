@@ -11,7 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
-  <script src="./image-slot.js"></script>
   <style>
     body{margin:0;background:#FFFFFF;}
     a{color:#1A1A18;}
@@ -19,27 +18,29 @@
   </style>
 </helmet>
 
-<dc-import name="Nav" current="home" hint-size="100%,81px"></dc-import>
+<dc-import name="Nav" current="contact" hint-size="100%,81px"></dc-import>
 
-<div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;">
+<div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;minHeight:calc(100vh - 81px);display:flex;flexDirection:column;">
 
-  <section ref="{{ heroRef }}" style="{{ heroStyle }}display:grid;gridTemplateColumns:1.2fr 0.8fr;gap:64px;padding:96px 48px 80px 48px;alignItems:center;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <div>
-      <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">UX/UI Designer → Front‑End Developer</div>
-      <h1 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:96px;lineHeight:0.98;color:#1A1A18;margin:0 0 32px 0;">Dominic Arlequin</h1>
-      <p style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:28px;lineHeight:1.4;color:#4A4A48;margin:0 0 48px 0;maxWidth:560px;">Design instincts. Self-taught build skills. Still figuring out the edges&nbsp; on purpose.</p>
-      <div style="display:flex;gap:32px;alignItems:center;">
-        <a href="Projects.dc.html" style="fontFamily:'DM Sans',sans-serif;fontSize:16px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:4px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View the work →</a>
-        <a href="Contact.dc.html" style="fontFamily:'DM Sans',sans-serif;fontSize:16px;color:#4A4A48;textDecoration:none;borderBottom:1px solid transparent;paddingBottom:4px;" style-hover="color:#1A1A18;borderBottom:1px solid #1A1A18;">Get in touch</a>
-      </div>
+  <section ref="{{ mainRef }}" style="{{ mainStyle }}flex:1;padding:96px 48px;maxWidth:900px;margin:0 auto;width:100%;boxSizing:border-box;">
+    <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">Contact</div>
+    <h2 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:56px;color:#1A1A18;margin:0 0 16px 0;">Let's talk.</h2>
+    <p style="fontFamily:'DM Sans',sans-serif;fontSize:17px;lineHeight:1.6;color:#4A4A48;margin:0 0 64px 0;maxWidth:520px;">Reach out, I'd love to hear from you.</p>
+
+    <div style="borderTop:1px solid #1A1A18;">
+      <a href="mailto:dominic.arlequin@pursuit.org" style="display:flex;justifyContent:space-between;alignItems:center;padding:32px 8px;borderBottom:1px solid #1A1A18;textDecoration:none;color:#1A1A18;" style-hover="background:#F5F5F4;">
+        <span style="fontFamily:'DM Sans',sans-serif;fontSize:14px;letterSpacing:1px;textTransform:uppercase;color:#4A4A48;">Email</span>
+        <span style="fontFamily:'Instrument Serif',serif;fontSize:26px;color:#1A1A18;">dominic.arlequin@pursuit.org →</span>
+      </a>
+      <a href="https://github.com/dominicarlequin-design" target="_blank" style="display:flex;justifyContent:space-between;alignItems:center;padding:32px 8px;borderBottom:1px solid #1A1A18;textDecoration:none;color:#1A1A18;" style-hover="background:#F5F5F4;">
+        <span style="fontFamily:'DM Sans',sans-serif;fontSize:14px;letterSpacing:1px;textTransform:uppercase;color:#4A4A48;">GitHub</span>
+        <span style="fontFamily:'Instrument Serif',serif;fontSize:26px;color:#1A1A18;">github.com/dominicarlequin-design →</span>
+      </a>
+      <a href="https://www.linkedin.com/in/dominic-arlequin-200407419/" target="_blank" style="display:flex;justifyContent:space-between;alignItems:center;padding:32px 8px;borderBottom:1px solid #1A1A18;textDecoration:none;color:#1A1A18;" style-hover="background:#F5F5F4;">
+        <span style="fontFamily:'DM Sans',sans-serif;fontSize:14px;letterSpacing:1px;textTransform:uppercase;color:#4A4A48;">LinkedIn</span>
+        <span style="fontFamily:'Instrument Serif',serif;fontSize:26px;color:#1A1A18;">linkedin.com/in/dominic-arlequin →</span>
+      </a>
     </div>
-    <div style="display:flex;justifyContent:center;">
-      <image-slot id="portrait" shape="rect" placeholder="Add a photo of Dominic" style="width:320px;height:400px;border:1px solid #1A1A18;background:#F5F5F4;filter:grayscale(1) contrast(1.05);"></image-slot>
-    </div>
-  </section>
-
-  <section ref="{{ stripRef }}" style="{{ stripStyle }}borderTop:1px solid #1A1A18;borderBottom:1px solid #1A1A18;background:#F5F5F4;padding:24px 48px;display:flex;justifyContent:center;">
-    <div style="fontFamily:'DM Sans',sans-serif;fontSize:14px;color:#4A4A48;letterSpacing:0.3px;">Currently — Pursuit AI Fundamentals Fellow, building front-end &amp; AI-powered tools</div>
   </section>
 
   <footer style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
@@ -105,10 +106,8 @@ class Component extends DCLogic {
 
   renderVals() {
     return {
-      heroRef: this.setRef('hero'),
-      heroStyle: this.toCss(this.styleFor('hero')),
-      stripRef: this.setRef('strip'),
-      stripStyle: this.toCss(this.styleFor('strip')),
+      mainRef: this.setRef('main'),
+      mainStyle: this.toCss(this.styleFor('main')),
     };
   }
 }

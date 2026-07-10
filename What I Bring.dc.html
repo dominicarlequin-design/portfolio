@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;background:#FFFFFF;}
+    a{color:#1A1A18;}
+    a:hover{color:#4A4A48;}
+  </style>
+</helmet>
+
+<dc-import name="Nav" current="bring" hint-size="100%,81px"></dc-import>
+
+<div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;">
+
+  <section style="padding:96px 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+    <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">What I Bring</div>
+    <h2 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:44px;color:#1A1A18;margin:0;maxWidth:640px;">Three things that don't show up on a resume line item.</h2>
+  </section>
+
+  <section ref="{{ cardsRef }}" style="{{ cardsStyle }}padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+    <div style="display:grid;gridTemplateColumns:repeat(3,1fr);border:1px solid #1A1A18;">
+
+      <div style="padding:48px;borderRight:1px solid #1A1A18;display:flex;flexDirection:column;gap:20px;">
+        <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;">01</div>
+        <h3 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:28px;color:#1A1A18;margin:0;">Purpose</h3>
+        <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.65;color:#4A4A48;margin:0;">I build things that matter — tools that solve real problems, not features that pad a portfolio. Every interface starts with the same question: does this actually help someone?</p>
+      </div>
+
+      <div style="padding:48px;borderRight:1px solid #1A1A18;display:flex;flexDirection:column;gap:20px;">
+        <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;">02</div>
+        <h3 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:28px;color:#1A1A18;margin:0;">Design Sense</h3>
+        <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.65;color:#4A4A48;margin:0;">Years of UX/UI work taught me to see hierarchy, spacing, and restraint before I ever touch code. I know what a good interface feels like, and I build toward that feeling.</p>
+      </div>
+
+      <div style="padding:48px;display:flex;flexDirection:column;gap:20px;">
+        <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;">03</div>
+        <h3 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:28px;color:#1A1A18;margin:0;">Self-Direction</h3>
+        <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.65;color:#4A4A48;margin:0;">I taught myself to code. I'm teaching myself AI. No one assigned me this path — I built it, one project at a time, and I keep building it.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
+    <span>&copy; 2026 Dominic Arlequin</span>
+    <div style="display:flex;gap:24px;">
+      <a href="mailto:dominic.arlequin@pursuit.org" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">Email</a>
+      <a href="https://github.com/dominicarlequin-design" target="_blank" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">GitHub</a>
+      <a href="https://www.linkedin.com/in/dominic-arlequin-200407419/" target="_blank" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">LinkedIn</a>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { revealed: {} };
+  refsMap = {};
+
+  componentDidMount() {
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          const id = en.target.getAttribute('data-reveal-id');
+          this.setState((s) => ({ revealed: { ...s.revealed, [id]: true } }));
+          this.io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    Object.keys(this.refsMap).forEach((k) => {
+      if (this.refsMap[k]) this.io.observe(this.refsMap[k]);
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+  }
+
+  setRef(id) {
+    return (el) => {
+      if (el && !this.refsMap[id]) {
+        el.setAttribute('data-reveal-id', id);
+        this.refsMap[id] = el;
+        if (this.io) this.io.observe(el);
+      }
+    };
+  }
+
+  styleFor(id) {
+    const on = !!this.state.revealed[id];
+    return {
+      opacity: on ? 1 : 0,
+      transform: on ? 'translateY(0)' : 'translateY(20px)',
+      transition: 'opacity 0.8s ease, transform 0.8s ease',
+    };
+  }
+
+  toCss(styleObj) {
+    return Object.entries(styleObj).map(([k, v]) => {
+      const kebab = k.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase());
+      return kebab + ':' + v;
+    }).join(';') + ';';
+  }
+
+  renderVals() {
+    return {
+      cardsRef: this.setRef('cards'),
+      cardsStyle: this.toCss(this.styleFor('cards')),
+    };
+  }
+}
+</script>
+</body>
+</html>

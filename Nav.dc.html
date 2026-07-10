@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<header style="position:sticky;top:0;z-index:50;background:#FFFFFF;borderBottom:1px solid #1A1A18;display:flex;alignItems:center;justifyContent:space-between;padding:24px 48px;fontFamily:'DM Sans',sans-serif;boxSizing:border-box;">
+  <a href="index.html" style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontSize:22px;color:#1A1A18;textDecoration:none;letterSpacing:0.2px;">Dominic Arlequin</a>
+  <nav style="display:flex;gap:32px;alignItems:center;">
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <a href="index.html" style="color:#1A1A18;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid #1A1A18;">Home</a>
+    </sc-if>
+    <sc-if value="{{ notHome }}" hint-placeholder-val="{{ false }}">
+      <a href="index.html" style="color:#4A4A48;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid transparent;" style-hover="color:#1A1A18;">Home</a>
+    </sc-if>
+
+    <sc-if value="{{ isBackground }}" hint-placeholder-val="{{ false }}">
+      <a href="Background.dc.html" style="color:#1A1A18;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid #1A1A18;">Background</a>
+    </sc-if>
+    <sc-if value="{{ notBackground }}" hint-placeholder-val="{{ true }}">
+      <a href="Background.dc.html" style="color:#4A4A48;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid transparent;" style-hover="color:#1A1A18;">Background</a>
+    </sc-if>
+
+    <sc-if value="{{ isBring }}" hint-placeholder-val="{{ false }}">
+      <a href="What I Bring.dc.html" style="color:#1A1A18;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid #1A1A18;">What I Bring</a>
+    </sc-if>
+    <sc-if value="{{ notBring }}" hint-placeholder-val="{{ true }}">
+      <a href="What I Bring.dc.html" style="color:#4A4A48;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid transparent;" style-hover="color:#1A1A18;">What I Bring</a>
+    </sc-if>
+
+    <sc-if value="{{ isProjects }}" hint-placeholder-val="{{ false }}">
+      <a href="Projects.dc.html" style="color:#1A1A18;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid #1A1A18;">Projects</a>
+    </sc-if>
+    <sc-if value="{{ notProjects }}" hint-placeholder-val="{{ true }}">
+      <a href="Projects.dc.html" style="color:#4A4A48;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid transparent;" style-hover="color:#1A1A18;">Projects</a>
+    </sc-if>
+
+    <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+      <a href="Contact.dc.html" style="color:#FFFFFF;textDecoration:none;fontSize:15px;padding:8px 16px;background:#1A1A18;">Contact</a>
+    </sc-if>
+    <sc-if value="{{ notContact }}" hint-placeholder-val="{{ true }}">
+      <a href="Contact.dc.html" style="color:#1A1A18;textDecoration:none;fontSize:15px;padding:8px 16px;border:1px solid #1A1A18;" style-hover="background:#1A1A18;color:#FFFFFF;">Contact</a>
+    </sc-if>
+  </nav>
+</header>
+
+<div style="font-size: 16px; line-height: 1; font-family: 'DM Sans', sans-serif; position: absolute; left: 128px; top: 63px">Your text here</div></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:81},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;background&quot;,&quot;bring&quot;,&quot;projects&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const current = this.props.current || 'home';
+    return {
+      isHome: current === 'home',
+      notHome: current !== 'home',
+      isBackground: current === 'background',
+      notBackground: current !== 'background',
+      isBring: current === 'bring',
+      notBring: current !== 'bring',
+      isProjects: current === 'projects',
+      notProjects: current !== 'projects',
+      isContact: current === 'contact',
+      notContact: current !== 'contact',
+    };
+  }
+}
+</script>
+</body>
+</html>
