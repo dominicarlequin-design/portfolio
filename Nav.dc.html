@@ -7,9 +7,19 @@
 </head>
 <body>
 <x-dc>
-<header style="position:sticky;top:0;z-index:50;background:#FFFFFF;borderBottom:1px solid #1A1A18;display:flex;alignItems:center;justifyContent:space-between;padding:24px 48px;fontFamily:'DM Sans',sans-serif;boxSizing:border-box;">
-  <a href="index.html" style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontSize:22px;color:#1A1A18;textDecoration:none;letterSpacing:0.2px;">Dominic Arlequin</a>
-  <nav style="display:flex;gap:32px;alignItems:center;">
+<helmet>
+  <style>
+    @media (max-width: 640px) {
+      .site-nav { padding: 16px 20px !important; }
+      .site-nav .nav-logo { font-size: 18px !important; }
+      .nav-links { gap: 14px !important; }
+      .nav-links a { font-size: 12px !important; padding: 6px 10px !important; }
+    }
+  </style>
+</helmet>
+<header class="site-nav" style="position:sticky;top:0;z-index:50;background:#FFFFFF;borderBottom:1px solid #1A1A18;display:flex;alignItems:center;justifyContent:space-between;padding:24px 48px;fontFamily:'DM Sans',sans-serif;boxSizing:border-box;">
+  <a href="index.html" class="nav-logo" style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontSize:22px;color:#1A1A18;textDecoration:none;letterSpacing:0.2px;">Dominic Arlequin</a>
+  <nav class="nav-links" style="display:flex;gap:32px;alignItems:center;">
     <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
       <a href="index.html" style="color:#1A1A18;textDecoration:none;fontSize:15px;paddingBottom:4px;borderBottom:1px solid #1A1A18;">Home</a>
     </sc-if>
@@ -46,8 +56,7 @@
     </sc-if>
   </nav>
 </header>
-
-<div style="font-size: 16px; line-height: 1; font-family: 'DM Sans', sans-serif; position: absolute; left: 128px; top: 63px">Your text here</div></x-dc>
+</x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:81},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;background&quot;,&quot;bring&quot;,&quot;projects&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   renderVals() {

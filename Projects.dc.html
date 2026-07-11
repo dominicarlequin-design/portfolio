@@ -15,6 +15,16 @@
     body{margin:0;background:#FFFFFF;}
     a{color:#1A1A18;}
     a:hover{color:#4A4A48;}
+    @media (max-width: 640px) {
+      .projects-intro { padding: 48px 24px 32px 24px !important; }
+      .projects-intro h2 { font-size: 32px !important; }
+      .project-section { padding: 0 24px 40px 24px !important; }
+      .project-card { grid-template-columns: 1fr !important; min-height: unset !important; }
+      .project-card > div { padding: 32px !important; border-right: none !important; border-left: none !important; }
+      .project-card > div:first-child { order: 2 !important; }
+      .project-card > div:last-child { order: 1 !important; border-bottom: 1px solid #1A1A18; }
+      .site-footer { padding: 24px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+    }
   </style>
 </helmet>
 
@@ -22,13 +32,13 @@
 
 <div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;">
 
-  <section style="padding:96px 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+  <section class="projects-intro" style="padding:96px 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
     <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">Projects</div>
     <h2 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:44px;color:#1A1A18;margin:0;maxWidth:640px;">Two builds, two very different problems.</h2>
   </section>
 
-  <section ref="{{ p1Ref }}" style="{{ p1Style }}padding:0 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <article style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
+  <section ref="{{ p1Ref }}" class="project-section" style="{{ p1Style }}padding:0 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+    <article class="project-card" style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
       <div style="padding:56px;display:flex;flexDirection:column;justifyContent:space-between;gap:32px;">
         <div>
           <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">01 - AI STUDY TOOL</div>
@@ -54,8 +64,8 @@
     </article>
   </section>
 
-  <section ref="{{ p2Ref }}" style="{{ p2Style }}padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <article style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
+  <section ref="{{ p2Ref }}" class="project-section" style="{{ p2Style }}padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+    <article class="project-card" style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
       <div style="borderRight:1px solid #1A1A18;background:#0E2C25;display:flex;alignItems:center;justifyContent:center;padding:48px;order:1;">
         <div style="position:relative;width:200px;height:200px;display:flex;alignItems:center;justifyContent:center;">
           <div style="position:absolute;width:200px;height:200px;borderRadius:50%;border:1px solid #6FA695;"></div>
@@ -79,7 +89,7 @@
     </article>
   </section>
 
-  <footer style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
+  <footer class="site-footer" style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
     <span>© 2026 Dominic Arlequin</span>
     <div style="display:flex;gap:24px;">
       <a href="mailto:dominic.arlequin@pursuit.org" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">Email</a>

@@ -15,6 +15,14 @@
     body{margin:0;background:#FFFFFF;}
     a{color:#1A1A18;}
     a:hover{color:#4A4A48;}
+    @media (max-width: 640px) {
+      .bring-intro { padding: 48px 24px 32px 24px !important; }
+      .bring-intro h2 { font-size: 32px !important; }
+      .bring-grid { grid-template-columns: 1fr !important; }
+      .bring-grid > div { border-right: none !important; border-bottom: 1px solid #1A1A18; }
+      .bring-grid > div:last-child { border-bottom: none; }
+      .site-footer { padding: 24px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+    }
   </style>
 </helmet>
 
@@ -22,13 +30,13 @@
 
 <div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;">
 
-  <section style="padding:96px 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+  <section class="bring-intro" style="padding:96px 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
     <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">What I Bring</div>
     <h2 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:44px;color:#1A1A18;margin:0;maxWidth:640px;">Three things that don't show up on a resume line item.</h2>
   </section>
 
   <section ref="{{ cardsRef }}" style="{{ cardsStyle }}padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <div style="display:grid;gridTemplateColumns:repeat(3,1fr);border:1px solid #1A1A18;">
+    <div class="bring-grid" style="display:grid;gridTemplateColumns:repeat(3,1fr);border:1px solid #1A1A18;">
 
       <div style="padding:48px;borderRight:1px solid #1A1A18;display:flex;flexDirection:column;gap:20px;">
         <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;">01</div>
@@ -51,7 +59,7 @@
     </div>
   </section>
 
-  <footer style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
+  <footer class="site-footer" style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
     <span>&copy; 2026 Dominic Arlequin</span>
     <div style="display:flex;gap:24px;">
       <a href="mailto:dominic.arlequin@pursuit.org" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">Email</a>
