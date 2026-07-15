@@ -26,10 +26,8 @@
       .projects-intro { padding: 48px 24px 32px 24px !important; }
       .projects-intro h2 { font-size: 32px !important; }
       .project-section { padding: 0 24px 40px 24px !important; }
-      .project-card { grid-template-columns: 1fr !important; min-height: unset !important; }
-      .project-card > div { padding: 32px !important; border-right: none !important; border-left: none !important; }
-      .project-card > div:first-child { order: 2 !important; }
-      .project-card > div:last-child { order: 1 !important; border-bottom: 1px solid #1A1A18; }
+      .project-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+      .project-card > div:last-child { padding: 32px !important; }
       .site-footer { padding: 24px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
     }
   </style>
@@ -44,48 +42,50 @@
    <h2 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:44px;color:#1A1A18;margin:0;maxWidth:640px;">Built with intention. Solved with purpose.</h2>
   </section>
 
-  <section ref="{{ p1Ref }}" class="project-section" style="{{ p1Style }}padding:0 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <article class="project-card" style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
-      <div style="padding:56px;display:flex;flexDirection:column;justifyContent:space-between;gap:32px;">
-        <div>
-          <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">01 - AI STUDY TOOL</div>
-          <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:36px;color:#1A1A18;margin:0 0 20px 0;">Flashcards v2</h3>
-           <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.7;color:#4A4A48;margin:0;">Built to turn dense material into the right questions — spaced repetition and a gamified level map, powered by the Anthropic API.</p>
-        </div>
-        <div style="display:flex;gap:12px;flexWrap:wrap;alignItems:center;">
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Anthropic API</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Spaced Repetition</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Gamified UX</span>
-          <a href="https://github.com/dominicarlequin-hub/flashcards-v2" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:8px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View on GitHub &rarr;</a>
-          <a href="https://flashcards-v2-ten.vercel.app/" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;">Live Site &rarr;</a>
-        </div>
-      </div>
-      <div style="borderLeft:1px solid #1A1A18;background:#0B0D14;display:flex;alignItems:center;justifyContent:center;padding:32px;overflow:hidden;">
-        <img src="./flashcards-screenshot.png" alt="Flashcards v2 interface" style="width:100%;height:100%;objectFit:contain;objectPosition:center;" />
-      </div>
-    </article>
-  </section>
+  <section class="project-section" style="padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+    <div class="project-grid" style="display:grid;gridTemplateColumns:1fr 1fr;gap:32px;">
 
-  <section ref="{{ p2Ref }}" class="project-section" style="{{ p2Style }}padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <article class="project-card" style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
-      <div style="borderRight:1px solid #1A1A18;background:#0E2C25;display:flex;alignItems:center;justifyContent:center;padding:0;order:1;overflow:hidden;">
-        <img src="./numerology-screenshot.png" alt="Numerology App interface" style="width:100%;height:100%;objectFit:cover;" />
-      </div>
-      <div style="padding:56px;display:flex;flexDirection:column;justifyContent:space-between;gap:32px;order:2;">
-        <div>
-          <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">02 — Numerology</div>
-          <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:36px;color:#1A1A18;margin:0 0 20px 0;">Numerology App</h3>
-          <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.7;color:#4A4A48;margin:0;">A dark, Midnight Emerald themed React app that takes a full birth name and date of birth and calculates core numerology numbers using the Pythagorean system visualized through Kabbalistic charts built for the reading, not just the data.</p>
+      <article ref="{{ p1Ref }}" class="project-card" style="{{ p1Style }}border:1px solid #1A1A18;display:flex;flexDirection:column;">
+        <div style="borderBottom:1px solid #1A1A18;background:#0B0D14;display:flex;alignItems:center;justifyContent:center;padding:32px;overflow:hidden;height:260px;">
+          <img src="./flashcards-screenshot.png" alt="Flashcards v2 interface" style="width:100%;height:100%;objectFit:contain;objectPosition:center;" />
         </div>
-        <div style="display:flex;gap:12px;flexWrap:wrap;alignItems:center;">
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">React</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Pythagorean System</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Kabbalistic Visualization</span>
-          <a href="https://github.com/dominicarlequin-hub/numerology-calculator" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:8px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View on GitHub &rarr;</a>
-          <a href="https://numerology-calculator-7iq5.vercel.app/" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;">Live Site &rarr;</a>
+        <div style="padding:40px;display:flex;flexDirection:column;gap:24px;">
+          <div>
+            <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">01 - AI STUDY TOOL</div>
+            <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:30px;color:#1A1A18;margin:0 0 16px 0;">Flashcards v2</h3>
+            <p style="fontFamily:'DM Sans',sans-serif;fontSize:15px;lineHeight:1.7;color:#4A4A48;margin:0;">Built to turn dense material into the right questions — spaced repetition and a gamified level map, powered by the Anthropic API.</p>
+          </div>
+          <div style="display:flex;gap:12px;flexWrap:wrap;alignItems:center;">
+            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Anthropic API</span>
+            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Spaced Repetition</span>
+            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Gamified UX</span>
+            <a href="https://github.com/dominicarlequin-hub/flashcards-v2" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:8px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View on GitHub &rarr;</a>
+            <a href="https://flashcards-v2-ten.vercel.app/" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;">Live Site &rarr;</a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+
+      <article ref="{{ p2Ref }}" class="project-card" style="{{ p2Style }}border:1px solid #1A1A18;display:flex;flexDirection:column;">
+        <div style="borderBottom:1px solid #1A1A18;background:#0E2C25;display:flex;alignItems:center;justifyContent:center;padding:0;overflow:hidden;height:260px;">
+          <img src="./numerology-screenshot.png" alt="Numerology App interface" style="width:100%;height:100%;objectFit:cover;" />
+        </div>
+        <div style="padding:40px;display:flex;flexDirection:column;gap:24px;">
+          <div>
+            <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">02 — Numerology</div>
+            <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:30px;color:#1A1A18;margin:0 0 16px 0;">Numerology App</h3>
+            <p style="fontFamily:'DM Sans',sans-serif;fontSize:15px;lineHeight:1.7;color:#4A4A48;margin:0;">A dark, Midnight Emerald themed React app that takes a full birth name and date of birth and calculates core numerology numbers using the Pythagorean system visualized through Kabbalistic charts built for the reading, not just the data.</p>
+          </div>
+          <div style="display:flex;gap:12px;flexWrap:wrap;alignItems:center;">
+            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">React</span>
+            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Pythagorean System</span>
+            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Kabbalistic Visualization</span>
+            <a href="https://github.com/dominicarlequin-hub/numerology-calculator" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:8px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View on GitHub &rarr;</a>
+            <a href="https://numerology-calculator-7iq5.vercel.app/" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;">Live Site &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
   </section>
 
   <footer class="site-footer" style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
