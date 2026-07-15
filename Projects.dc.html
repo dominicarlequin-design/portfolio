@@ -1,156 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap" rel="stylesheet">
-  <style>
-    body{margin:0;background:#FFFFFF;}
-    a{color:#1A1A18;}
-    a:hover{color:#4A4A48;}
-    @media (max-width: 640px) {
-      .projects-intro { padding: 48px 24px 32px 24px !important; }
-      .projects-intro h2 { font-size: 32px !important; }
-      .project-section { padding: 0 24px 40px 24px !important; }
-      .project-card { grid-template-columns: 1fr !important; min-height: unset !important; }
-      .project-card > div { padding: 32px !important; border-right: none !important; border-left: none !important; }
-      .project-card > div:first-child { order: 2 !important; }
-      .project-card > div:last-child { order: 1 !important; border-bottom: 1px solid #1A1A18; }
-      .site-footer { padding: 24px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
-    }
-  </style>
-</helmet>
-
-<dc-import name="Nav" current="projects" hint-size="100%,81px"></dc-import>
-
-<div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;">
-
-  <section class="projects-intro" style="padding:96px 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">Projects</div>
-    <h2 style="fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:44px;color:#1A1A18;margin:0;maxWidth:640px;">Two builds, two very different problems.</h2>
-  </section>
-
-  <section ref="{{ p1Ref }}" class="project-section" style="{{ p1Style }}padding:0 48px 48px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <article class="project-card" style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
-      <div style="padding:56px;display:flex;flexDirection:column;justifyContent:space-between;gap:32px;">
-        <div>
-          <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">01 - AI STUDY TOOL</div>
-          <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:36px;color:#1A1A18;margin:0 0 20px 0;">Flashcards v2</h3>
-          <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.7;color:#4A4A48;margin:0;">Upload a PDF, get back a deck of spaced repetition flashcards and a gamified level map that turns studying into something you actually want to open again. Built on the Anthropic API to turn dense material into the right questions.</p>
-        </div>
-        <div style="display:flex;gap:12px;flexWrap:wrap;alignItems:center;">
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Anthropic API</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Spaced Repetition</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Gamified UX</span>
-          <a href="https://github.com/dominicarlequin-hub/flashcards-v2" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:8px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View on GitHub &rarr;</a>
-          <a href="https://flashcards-v2-ten.vercel.app/" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;">Live Site &rarr;</a>
-        </div>
-      </div>
-      <div style="borderLeft:1px solid #1A1A18;background:#0B0D14;display:flex;alignItems:center;justifyContent:center;padding:32px;overflow:hidden;">
-        <img src="./flashcards-screenshot.png" alt="Flashcards v2 interface" style="width:100%;height:100%;objectFit:contain;objectPosition:center;" />
-      </div>
-    </article>
-  </section>
-
-  <section ref="{{ p2Ref }}" class="project-section" style="{{ p2Style }}padding:0 48px 96px 48px;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
-    <article class="project-card" style="border:1px solid #1A1A18;display:grid;gridTemplateColumns:1fr 1fr;minHeight:420px;">
-      <div style="borderRight:1px solid #1A1A18;background:#0E2C25;display:flex;alignItems:center;justifyContent:center;padding:0;order:1;overflow:hidden;">
-        <img src="./numerology-screenshot.png" alt="Numerology App interface" style="width:100%;height:100%;objectFit:cover;" />
-      </div>
-      <div style="padding:56px;display:flex;flexDirection:column;justifyContent:space-between;gap:32px;order:2;">
-        <div>
-          <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">02 — Numerology</div>
-          <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:36px;color:#1A1A18;margin:0 0 20px 0;">Numerology App</h3>
-          <p style="fontFamily:'DM Sans',sans-serif;fontSize:16px;lineHeight:1.7;color:#4A4A48;margin:0;">A dark, Midnight Emerald themed React app that takes a full birth name and date of birth and calculates core numerology numbers using the Pythagorean system visualized through Kabbalistic charts built for the reading, not just the data.</p>
-        </div>
-        <div style="display:flex;gap:12px;flexWrap:wrap;alignItems:center;">
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">React</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Pythagorean System</span>
-          <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Kabbalistic Visualization</span>
-          <a href="https://github.com/dominicarlequin-hub/numerology-calculator" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:8px;" style-hover="color:#4A4A48;borderBottom:1px solid #4A4A48;">View on GitHub &rarr;</a>
-          <a href="https://numerology-calculator-7iq5.vercel.app/" target="_blank" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;">Live Site &rarr;</a>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <footer class="site-footer" style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
-    <span>© 2026 Dominic Arlequin</span>
-    <div style="display:flex;gap:24px;">
-      <a href="mailto:dominic.arlequin@pursuit.org" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">Email</a>
-      <a href="https://github.com/dominicarlequin-design" target="_blank" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">GitHub</a>
-      <a href="https://www.linkedin.com/in/dominic-arlequin-200407419/" target="_blank" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">LinkedIn</a>
-    </div>
-  </footer>
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
-class Component extends DCLogic {
-  state = { revealed: {} };
-  refsMap = {};
-
-  componentDidMount() {
-    this.io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          const id = en.target.getAttribute('data-reveal-id');
-          this.setState((s) => ({ revealed: { ...s.revealed, [id]: true } }));
-          this.io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    Object.keys(this.refsMap).forEach((k) => {
-      if (this.refsMap[k]) this.io.observe(this.refsMap[k]);
-    });
+<style>
+  body{margin:0;background:#FFFFFF;}
+  a{color:#1A1A18;}
+  a:hover{color:#4A4A48;}
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
-  componentWillUnmount() {
-    if (this.io) this.io.disconnect();
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15), 0 0 0 1px #FFC800;
   }
-
-  setRef(id) {
-    return (el) => {
-      if (el && !this.refsMap[id]) {
-        el.setAttribute('data-reveal-id', id);
-        this.refsMap[id] = el;
-        if (this.io) this.io.observe(el);
-      }
-    };
-  }
-
-  styleFor(id) {
-    const on = !!this.state.revealed[id];
-    return {
-      opacity: on ? 1 : 0,
-      transform: on ? 'translateY(0)' : 'translateY(20px)',
-      transition: 'opacity 0.8s ease, transform 0.8s ease',
-    };
-  }
-
-  toCss(styleObj) {
-    return Object.entries(styleObj).map(([k, v]) => {
-      const kebab = k.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase());
-      return kebab + ':' + v;
-    }).join(';') + ';';
-  }
-
-  renderVals() {
-    return {
-      p1Ref: this.setRef('p1'),
-      p1Style: this.toCss(this.styleFor('p1')),
-      p2Ref: this.setRef('p2'),
-      p2Style: this.toCss(this.styleFor('p2')),
-    };
-  }
-}
-</script>
-</body>
-</html>
+  @media (max-width: 640px) {
+    .projects-intro { padding: 48px 24px 32px 24px !important; }
+    .projects-intro h2 { font-size: 32px !important; }
+    .project-section { padding: 0 24px 40px 24px !important; }
+    .project-card { grid-template-columns: 1fr !important; min-height: unset !important; }
+    .project-card > div { padding: 32px !important; border-right: none !important; border-left: none !important; }
+    .project-card > div:first-child { order: 2 !important; }
+    .project-card > div:last-child { order: 1 !important; border-bottom: 1px solid #1A1A18; }
+    .site-footer {
