@@ -29,6 +29,13 @@
       .info-strip { padding: 20px 24px !important; text-align: center; }
       .site-footer { padding: 24px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
     }
+    h1,h2,h3,p{text-wrap:pretty;}
+    .hero-cta-primary{display:inline-flex;align-items:center;gap:10px;background:#1A1A18;color:#FFFFFF;padding:14px 26px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;text-decoration:none;transition:background 0.25s ease;}
+    .hero-cta-primary:hover{background:#000000;color:#FFFFFF;}
+    .hero-cta-primary .arrow{transition:transform 0.25s ease,color 0.25s ease;}
+    .hero-cta-primary:hover .arrow{transform:translateX(5px);color:#FFC800;}
+    .hero-cta-secondary{display:inline-flex;align-items:center;background:transparent;color:#1A1A18;padding:14px 26px;border:1px solid #1A1A18;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;text-decoration:none;transition:color 0.25s ease,border-color 0.25s ease;}
+    .hero-cta-secondary:hover{color:#FFC800;border-color:#FFC800;}
   </style>
 </helmet>
 
@@ -36,19 +43,19 @@
 
 <div style="fontFamily:'DM Sans',sans-serif;background:#FFFFFF;">
 
-  <section class="hero-grid" style="display:grid;gridTemplateColumns:1.2fr 0.8fr;gap:64px;padding:96px 48px 80px 48px;alignItems:center;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
+  <section class="hero-grid" style="display:grid;gridTemplateColumns:1.2fr 0.8fr;gap:64px;padding:150px 48px 90px 48px;alignItems:center;maxWidth:1280px;margin:0 auto;boxSizing:border-box;">
     <div style="width:100%;minWidth:0;boxSizing:border-box;">
-      <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:24px;">UX/UI Designer → Front End Developer</div>
-      <h1 class="hero-title" style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:96px;lineHeight:1.05;color:#1A1A18;margin:0 0 32px 0;width:100%;maxWidth:100%;overflowWrap:break-word;wordBreak:break-word;">Dominic Arlequin</h1>
-      <p class="hero-tag" style="fontFamily:'DM Sans',sans-serif;fontWeight:400;fontSize:28px;lineHeight:1.4;color:#4A4A48;margin:0 0 48px 0;width:100%;maxWidth:560px;overflowWrap:break-word;wordBreak:break-word;">I design with intention, I build with purpose.</p>
-      <div style="display:flex;gap:32px;alignItems:center;">
-        <a href="Projects.dc.html" style="fontFamily:'DM Sans',sans-serif;fontSize:16px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:4px;" style-hover="color:#FFC800;border-bottom-color:#FFC800;">View the work →</a>
-        <a href="Contact.dc.html" style="fontFamily:'DM Sans',sans-serif;fontSize:16px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:4px;" style-hover="color:#FFC800;border-bottom-color:#FFC800;">Get in touch</a>
+      <div style="{{ eyebrowStyle }}fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:16px;">UX/UI Designer → Front End Developer</div>
+      <h1 class="hero-title" style="{{ titleStyle }}fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:60px;lineHeight:1.05;color:#1A1A18;margin:0 0 20px 0;width:100%;maxWidth:100%;overflowWrap:break-word;wordBreak:break-word;">Dominic Arlequin</h1>
+      <p class="hero-tag" style="{{ tagStyle }}fontFamily:'Instrument Serif',serif;fontStyle:italic;fontWeight:400;fontSize:30px;lineHeight:1.3;color:#1A1A18;margin:0 0 28px 0;width:100%;maxWidth:560px;overflowWrap:break-word;wordBreak:break-word;">I design with intention, I build with purpose.</p>
+      <div style="{{ ctaStyle }}display:flex;gap:16px;alignItems:center;flexWrap:wrap;">
+        <a href="Projects.dc.html" class="hero-cta-primary">View the work <span class="arrow">→</span></a>
+        <a href="Contact.dc.html" class="hero-cta-secondary">Get in touch</a>
       </div>
     </div>
-    <div class="hero-photo" style="display:flex;justifyContent:center;">
+    <div class="hero-photo" style="{{ photoStyle }}display:flex;justifyContent:center;">
       <div style="position:relative;display:inline-block;">
-        <img src="./portrait.webp" alt="Dominic Arlequin" style="width:320px;maxWidth:100%;height:400px;object-fit:cover;border:1px solid #1A1A18;background:#1A1A1A;filter:grayscale(1) contrast(1.05);" />
+        <img src="./portrait.webp" alt="Dominic Arlequin" style="width:260px;maxWidth:100%;height:320px;object-fit:cover;border:1px solid #1A1A18;background:#F5F5F4;filter:grayscale(1) contrast(1.05);" />
         <div style="position:absolute;top:-2px;left:-2px;width:24px;height:24px;borderTop:2px solid #FFC800;borderLeft:2px solid #FFC800;borderRadius:0;pointerEvents:none;"></div>
         <div style="position:absolute;top:-2px;right:-2px;width:24px;height:24px;borderTop:2px solid #FFC800;borderRight:2px solid #FFC800;borderRadius:0;pointerEvents:none;"></div>
         <div style="position:absolute;bottom:-2px;left:-2px;width:24px;height:24px;borderBottom:2px solid #FFC800;borderLeft:2px solid #FFC800;borderRadius:0;pointerEvents:none;"></div>
@@ -64,9 +71,9 @@
   <footer class="site-footer" style="borderTop:1px solid #1A1A18;padding:32px 48px;display:flex;justifyContent:space-between;alignItems:center;flexWrap:wrap;gap:16px;fontFamily:'DM Sans',sans-serif;fontSize:13px;color:#4A4A48;">
     <span>© 2026 Dominic Arlequin</span>
     <div style="display:flex;gap:24px;">
-      <a href="mailto:dominic.arlequin@pursuit.org" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">Email</a>
-      <a href="https://github.com/dominicarlequin-design" target="_blank" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">GitHub</a>
-      <a href="https://www.linkedin.com/in/dominic-arlequin-200407419/" target="_blank" style="color:#4A4A48;textDecoration:none;" style-hover="color:#1A1A18;">LinkedIn</a>
+      <a href="mailto:dominic.arlequin@pursuit.org" style="color:#4A4A48;textDecoration:none;display:inline-flex;alignItems:center;gap:7px;" style-hover="color:#1A1A18;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"></rect><path d="M3 7l9 6 9-6"></path></svg>Email</a>
+      <a href="https://github.com/dominicarlequin-design" target="_blank" style="color:#4A4A48;textDecoration:none;display:inline-flex;alignItems:center;gap:7px;" style-hover="color:#1A1A18;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.87 0 12.5c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.12-.31-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.18.77.84 1.24 1.91 1.24 3.23 0 4.63-2.81 5.65-5.49 5.95.43.37.81 1.1.81 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.22.7.83.58A12 12 0 0 0 24 12.5C24 5.87 18.63.5 12 .5z"></path></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/dominic-arlequin-200407419/" target="_blank" style="color:#4A4A48;textDecoration:none;display:inline-flex;alignItems:center;gap:7px;" style-hover="color:#1A1A18;"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.64h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.65 4.76 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9z"></path></svg>LinkedIn</a>
     </div>
   </footer>
 </div>
@@ -74,8 +81,35 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
 class Component extends DCLogic {
+  state = { on: false };
+
+  componentDidMount() {
+    this.raf = requestAnimationFrame(() => {
+      requestAnimationFrame(() => this.setState({ on: true }));
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.raf) cancelAnimationFrame(this.raf);
+  }
+
+  anim(delay) {
+    const on = this.state.on;
+    return [
+      'opacity:' + (on ? 1 : 0),
+      'transform:' + (on ? 'translateY(0)' : 'translateY(14px)'),
+      'transition:opacity 0.7s ease ' + delay + 's, transform 0.7s ease ' + delay + 's',
+    ].join(';') + ';';
+  }
+
   renderVals() {
-    return {};
+    return {
+      eyebrowStyle: this.anim(0.05),
+      titleStyle: this.anim(0.13),
+      tagStyle: this.anim(0.24),
+      ctaStyle: this.anim(0.35),
+      photoStyle: this.anim(0.18),
+    };
   }
 }
 </script>
