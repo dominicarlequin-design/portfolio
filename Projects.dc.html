@@ -122,41 +122,6 @@
         </div>
       </article>
 
-      <article ref="{{ p3Ref }}" class="project-card" style="{{ p3Style }}border:1px solid #1A1A18;display:flex;alignItems:stretch;background:#FFFFFF;">
-        <div class="project-media" style="width:42%;flexShrink:0;borderRight:1px solid #1A1A18;background:#f8fafc;minHeight:420px;">
-          <img src="./inventory-urgency.png" alt="Inventory Urgency — dairy stock triaged into Needs Attention and Fine For Now columns" style="width:100%;height:100%;objectFit:contain;objectPosition:center;display:block;">
-        </div>
-        <div class="pc-body" style="flex:1;minWidth:0;padding:36px;display:flex;flexDirection:column;gap:22px;">
-          <div>
-            <div style="fontFamily:'DM Sans',sans-serif;fontSize:13px;letterSpacing:1.5px;textTransform:uppercase;color:#4A4A48;marginBottom:8px;">03 · Internal Tool</div>
-            <h3 style="fontFamily:'Instrument Serif',serif;fontWeight:400;fontSize:30px;color:#1A1A18;margin:0 0 10px 0;">Inventory Urgency</h3>
-            <p style="fontFamily:'DM Sans',sans-serif;fontSize:15px;lineHeight:1.6;color:#4A4A48;margin:0;">A single-screen triage view that sorts dairy stock into what needs attention today and what can wait.</p>
-          </div>
-
-          <div style="borderTop:1px solid #E5E5E3;paddingTop:22px;display:flex;flexDirection:column;gap:16px;">
-            <div style="display:flex;flexDirection:column;gap:5px;">
-              <div style="display:flex;alignItems:center;gap:8px;"><span style="fontFamily:'DM Sans',sans-serif;fontSize:11px;fontWeight:700;letterSpacing:1.5px;textTransform:uppercase;color:#1A1A18;">Problem</span></div>
-              <p style="fontFamily:'DM Sans',sans-serif;fontSize:14px;lineHeight:1.6;color:#4A4A48;margin:0;">Staff had to scan a full spreadsheet by eye to catch dairy running low or nearing its expiration date, easy to miss on a busy shift.</p>
-            </div>
-            <div style="display:flex;flexDirection:column;gap:5px;">
-              <div style="display:flex;alignItems:center;gap:8px;"><span style="fontFamily:'DM Sans',sans-serif;fontSize:11px;fontWeight:700;letterSpacing:1.5px;textTransform:uppercase;color:#1A1A18;">Approach</span></div>
-              <p style="fontFamily:'DM Sans',sans-serif;fontSize:14px;lineHeight:1.6;color:#4A4A48;margin:0;">Every SKU is checked against its reorder threshold and days-to-expiration, then split into two columns with the reason called out as a flag chip.</p>
-            </div>
-            <div style="display:flex;flexDirection:column;gap:5px;">
-              <div style="display:flex;alignItems:center;gap:8px;"><span style="fontFamily:'DM Sans',sans-serif;fontSize:11px;fontWeight:700;letterSpacing:1.5px;textTransform:uppercase;color:#1A1A18;">Outcome</span></div>
-              <p style="fontFamily:'DM Sans',sans-serif;fontSize:14px;lineHeight:1.6;color:#4A4A48;margin:0;">A five-second glance replaces a manual spreadsheet scan, so stockouts and near-dated dairy get caught before they cost a sale.</p>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:10px;flexWrap:wrap;alignItems:center;marginTop:2px;">
-            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Inventory Triage</span>
-            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Threshold Logic</span>
-            <span style="border:1px solid #1A1A18;padding:6px 14px;fontSize:13px;color:#1A1A18;">Dairy Ops</span>
-            <a href="inventory-urgency.dc.html" target="_blank" class="live-link" style="fontFamily:'DM Sans',sans-serif;fontSize:13px;fontWeight:500;color:#1A1A18;textDecoration:none;borderBottom:1px solid #1A1A18;paddingBottom:2px;marginLeft:6px;">View Tool →</a>
-          </div>
-        </div>
-      </article>
-
     </div>
   </section>
 
@@ -226,8 +191,6 @@ class Component extends DCLogic {
       p1Style: this.toCss(this.styleFor('p1')),
       p2Ref: this.setRef('p2'),
       p2Style: this.toCss(this.styleFor('p2')),
-      p3Ref: this.setRef('p3'),
-      p3Style: this.toCss(this.styleFor('p3')),
     };
   }
 }
